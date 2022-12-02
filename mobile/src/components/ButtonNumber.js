@@ -1,7 +1,7 @@
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import React, { useState } from 'react';
 
-export function ButtonNumber() {
+export function ButtonNumber({ calculation }) {
   const number = [];
 
   for (let i = 0; i <= 9; i++) {
@@ -10,24 +10,29 @@ export function ButtonNumber() {
 
   return (
     <View style={styles.container}>
-      <TouchableOpacity style={styles.box}>
+      <TouchableOpacity style={styles.box} onPress={() => calculation('+')}>
         <Text style={styles.textBox}>+</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.box}>
+
+      <TouchableOpacity style={styles.box} onPress={() => calculation('-')}>
         <Text style={styles.textBox}>-</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.box}>
+
+      <TouchableOpacity style={styles.box} onPress={() => calculation('=')}>
         <Text style={styles.textBox}>=</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.box}>
+
+      <TouchableOpacity style={styles.box} onPress={() => calculation('x')}>
         <Text style={styles.textBox}>x</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.box}>
+
+      <TouchableOpacity style={styles.box} onPress={() => calculation('/')}>
         <Text style={styles.textBox}>/</Text>
       </TouchableOpacity>
+
       {number.map((nbr) => {
         return (
-          <TouchableOpacity style={styles.box}>
+          <TouchableOpacity style={styles.box} onPress={() => calculation(nbr)}>
             <Text style={styles.textBox}>{nbr}</Text>
           </TouchableOpacity>
         );

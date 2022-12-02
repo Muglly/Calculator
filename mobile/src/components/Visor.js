@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 
-export function Visor() {
-  const [visor, setVisor] = useState(0);
-
+export function Visor({ visor }) {
   return (
     <View style={styles.visor}>
       <Text style={styles.textVisor}>{visor}</Text>

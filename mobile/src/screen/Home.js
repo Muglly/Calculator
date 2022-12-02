@@ -5,14 +5,36 @@ import { ButtonNumber, Numbers } from '../components/ButtonNumber';
 import { Visor } from '../components/Visor';
 
 export function Home() {
-  const [firstNumber, setFirstNumber] = useState(0);
   const [secondNumber, setSecondNumber] = useState(0);
-  const [operator, setOperator] = useState('');
+  const [firstNumber, setFirstNumber] = useState(0);
+  const [visor, setVisor] = useState(0);
+  const [sign, setSign] = useState('');
+
+  const calculation = (operator) => {
+    if (sign == '') {
+      setFirstNumber(parseInt(firstNumber.toString() + operator.toString()));
+      setVisor(parseInt(firstNumber.toString() + operator.toString()));
+    }
+
+    if (
+      (operator == '/' || operator == 'x' || operator == '-' || operator == '+') &&
+      secondNumber == 0
+    ) {
+      setVisor(firstNumber.toString() + operator);
+      setSign(operator);
+    }
+
+    if (sign != '') {
+      setSecondNumber(parseInt(secondNumber.toString() + operator.toString()));
+      const sNumber = parseInt(secondNumber.toString() + operator.toString());
+      setVisor(firstNumber + sign + sNumber);
+    }
+  };
 
   return (
     <View style={styles.container}>
-      <Visor />
-      <ButtonNumber />
+      <Visor visor={visor} />
+      <ButtonNumber calculation={calculation} />
     </View>
   );
 }
