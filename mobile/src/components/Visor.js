@@ -16,9 +16,11 @@ const styles = StyleSheet.create({
     width: '100%',
     height: 250,
     padding: 20,
-    backgroundColor: '#7676',
+    backgroundColor: '#76767676',
     alignItems: 'flex-end',
     justifyContent: 'flex-end',
+    borderBottomColor: '#767676',
+    borderBottomWidth: 1,
   },
   textVisor: {
     fontSize: 50,
