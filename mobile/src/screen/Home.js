@@ -29,6 +29,23 @@ export function Home() {
       const sNumber = parseInt(secondNumber.toString() + operator.toString());
       setVisor(firstNumber + sign + sNumber);
     }
+
+    if (operator == '=') {
+      let result = 0;
+      if (sign == '+') {
+        result = firstNumber + secondNumber;
+      } else if (sign == '-') {
+        result = firstNumber - secondNumber;
+      } else if (sign == 'x') {
+        result = firstNumber * secondNumber;
+      } else if (sign == '/') {
+        result = firstNumber / secondNumber;
+      }
+      setVisor(result);
+      setFirstNumber(result);
+      setSign('');
+      setSecondNumber(0);
+    }
   };
 
   return (
