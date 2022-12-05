@@ -1,0 +1,80 @@
+.all-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 290px;
+  padding: 10px 5px;
+  border: 1px solid #767676;
+  background-color: #76767676;
+}
+
+.sign-num-container {
+  display: flex;
+}
+
+.sign-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 11px;
+}
+
+.num-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  justify-content: center;
+  max-width: 200px;
+  gap: 10px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  background-color: #7676;
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+.btn:nth-of-type(10) {
+  width: 100%;
+}
+
+.btn-top-container {
+  display: flex;
+  padding: 10px 0;
+  gap: 10px;
+}
+
+.btn-top {
+  width: 130px;
+  height: 30px;
+}
+
+.btn-top:nth-of-type(2) {
+  background-color: #007676;
+}
+
+.btn-text {
+  font-size: 25px;
+  color: #ddd;
+}
+
+.text-c {
+  color: red;
+  font-weight: 600;
+}
+
+.text-color {
+  color: #fd873d;
+}

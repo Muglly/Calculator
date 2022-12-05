@@ -7,16 +7,48 @@ export function ButtonsNumber() {
     numbers.push(i);
   }
 
+  numbers.reverse();
+
   return (
     <div className="all-btn">
-      <div className="box-container">
-        {numbers.map((num) => {
-          return (
-            <div className="btn" key={num.toString()}>
-              <span className="btn-text">{num}</span>
-            </div>
-          );
-        })}
+      <div className="btn-top-container">
+        <button className="btn btn-top">
+          <span className="btn-text text-c">C</span>
+        </button>
+
+        <button className="btn btn-top">
+          <span className="btn-text text-r">=</span>
+        </button>
+      </div>
+
+      <div className="sign-num-container">
+        <div className="num-container">
+          {numbers.map((num) => {
+            return (
+              <button className="btn" key={num.toString()}>
+                <span className="btn-text">{num}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        <div className="sign-container">
+          <button className="btn">
+            <span className="btn-text  text-color">+</span>
+          </button>
+
+          <button className="btn">
+            <span className="btn-text text-color">-</span>
+          </button>
+
+          <button className="btn">
+            <span className="btn-text text-color">/</span>
+          </button>
+
+          <button className="btn">
+            <span className="btn-text text-color">x</span>
+          </button>
+        </div>
       </div>
     </div>
   );
