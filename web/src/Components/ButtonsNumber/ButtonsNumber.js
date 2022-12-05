@@ -1,22 +1,23 @@
-import React from 'react';
+import './ButtonsNumber.css';
 
 export function ButtonsNumber() {
-  const numbers = [{ id: [] }, { number: [] }];
+  const numbers = [];
 
   for (let i = 0; i <= 9; i++) {
-    numbers[0].id.push(i);
-    numbers[1].number.push(i);
+    numbers.push(i);
   }
 
   return (
-    <div className="box-container">
-      {numbers.map((nbr) => {
-        return (
-          <div>
-            <span key={nbr.id}>{nbr.number}</span>
-          </div>
-        );
-      })}
+    <div className="all-btn">
+      <div className="box-container">
+        {numbers.map((num) => {
+          return (
+            <div className="btn" key={num.toString()}>
+              <span className="btn-text">{num}</span>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
