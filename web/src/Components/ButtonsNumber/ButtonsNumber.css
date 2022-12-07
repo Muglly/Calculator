@@ -47,7 +47,7 @@
 }
 
 .btn:nth-of-type(10) {
-  width: 100%;
+  width: 65%;
 }
 
 .btn-top-container {
@@ -77,4 +77,9 @@
 
 .text-color {
   color: #fd873d;
+}
+
+.dot {
+  position: relative;
+  bottom: 5px;
 }

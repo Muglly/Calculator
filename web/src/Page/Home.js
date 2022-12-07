@@ -11,8 +11,12 @@ export function Home() {
 
   const calculation = (operator) => {
     if (sign === '') {
-      setFirstNumber(parseInt(firstNumber.toString() + operator.toString()));
-      setVisor(parseInt(firstNumber.toString() + operator.toString()));
+      setFirstNumber(parseFloat(firstNumber.toString() + operator.toString()));
+      setVisor(parseFloat(firstNumber.toString() + operator.toString()));
+      if (operator === '.') {
+        setFirstNumber(firstNumber.toString() + operator.toString());
+        setVisor(parseFloat(firstNumber.toString() + operator.toString()));
+      }
     }
 
     if (
@@ -24,9 +28,15 @@ export function Home() {
     }
 
     if (sign !== '') {
-      setSecondNumber(parseInt(secondNumber.toString() + operator.toString()));
-      const sNumber = parseInt(secondNumber.toString() + operator.toString());
+      setSecondNumber(parseFloat(secondNumber.toString() + operator.toString()));
+      const sNumber = parseFloat(secondNumber.toString() + operator.toString());
       setVisor(firstNumber + sign + sNumber);
+      if (operator === '.') {
+        setSecondNumber(secondNumber.toString() + operator.toString());
+        setVisor(
+          parseFloat(firstNumber + sign + parseFloat(secondNumber.toString() + operator.toString()))
+        );
+      }
     }
 
     if (operator === '=') {

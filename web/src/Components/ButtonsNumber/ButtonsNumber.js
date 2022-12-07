@@ -30,6 +30,9 @@ export function ButtonsNumber({ calculation }) {
               </button>
             );
           })}
+          <button className="btn" onClick={() => calculation('.')}>
+            <span className="btn-text dot">.</span>
+          </button>
         </div>
 
         <div className="sign-container">
