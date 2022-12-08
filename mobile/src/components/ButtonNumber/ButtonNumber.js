@@ -30,10 +30,14 @@ export function ButtonNumber({ calculation }) {
         <Text style={styles.textBox}>/</Text>
       </TouchableOpacity>
 
-      {number.map((nbr) => {
+      {number.map((num) => {
         return (
-          <TouchableOpacity style={styles.box} onPress={() => calculation(nbr)}>
-            <Text style={styles.textBox}>{nbr}</Text>
+          <TouchableOpacity
+            style={styles.box}
+            key={num.toString()}
+            onPress={() => calculation(num)}
+          >
+            <Text style={styles.textBox}>{num}</Text>
           </TouchableOpacity>
         );
       })}

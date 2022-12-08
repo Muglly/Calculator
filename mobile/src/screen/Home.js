@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
-import { ButtonNumber, Numbers } from '../components/ButtonNumber';
-import { Visor } from '../components/Visor';
+import { ButtonNumber } from '../components/ButtonNumber/ButtonNumber';
+import { Visor } from '../components/Visor/Visor';
 
 export function Home() {
   const [secondNumber, setSecondNumber] = useState(0);
