@@ -46,6 +46,13 @@ export function Home() {
       setSign('');
       setSecondNumber(0);
     }
+
+    if (operator === 'c') {
+      setVisor(0);
+      setFirstNumber(0);
+      setSign('');
+      setSecondNumber(0);
+    }
   };
 
   return (
