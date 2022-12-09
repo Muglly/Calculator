@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Container } from './Styles';
 
 import { ButtonNumber } from '../components/ButtonNumber/ButtonNumber';
 import { Visor } from '../components/Visor/Visor';
@@ -49,16 +49,9 @@ export function Home() {
   };
 
   return (
-    <View style={styles.container}>
+    <Container>
       <Visor visor={visor} />
       <ButtonNumber calculation={calculation} />
-    </View>
+    </Container>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#353535',
-  },
-});
