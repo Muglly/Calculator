@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { VisorStyle, TextVisor } from './styles';
+import { VisorStyle, TextVisor } from './Styles';
 
 export function Visor({ visor }) {
   return (

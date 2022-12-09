@@ -1,69 +1,73 @@
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import React, { useState } from 'react';
+import {
+  AllBtn,
+  Btn,
+  BtnText,
+  NumContainer,
+  SingContainer,
+  BtnTopContainer,
+  BtnTop,
+  Container,
+  Dot,
+  TextC,
+  BtnR,
+  TextSing,
+  Zero,
+} from './Styles';
 
 export function ButtonNumber({ calculation }) {
   const number = [];
 
-  for (let i = 0; i <= 9; i++) {
+  for (let i = 1; i <= 9; i++) {
     number.push(i);
   }
 
+  number.reverse();
+
   return (
-    <View style={styles.container}>
-      <TouchableOpacity style={styles.box} onPress={() => calculation('+')}>
-        <Text style={styles.textBox}>+</Text>
-      </TouchableOpacity>
+    <AllBtn>
+      <BtnTopContainer>
+        <BtnTop onPress={() => calculation('c')}>
+          <TextC>C</TextC>
+        </BtnTop>
 
-      <TouchableOpacity style={styles.box} onPress={() => calculation('-')}>
-        <Text style={styles.textBox}>-</Text>
-      </TouchableOpacity>
+        <BtnR onPress={() => calculation('=')}>
+          <BtnText>=</BtnText>
+        </BtnR>
+      </BtnTopContainer>
+      <Container>
+        <NumContainer>
+          {number.map((num) => {
+            return (
+              <Btn key={num.toString()} onPress={() => calculation(num)}>
+                <BtnText>{num}</BtnText>
+              </Btn>
+            );
+          })}
+          <Zero onPress={() => calculation(0)}>
+            <BtnText>0</BtnText>
+          </Zero>
+          <Btn onPress={() => calculation('.')}>
+            <Dot>.</Dot>
+          </Btn>
+        </NumContainer>
+        <SingContainer>
+          <Btn onPress={() => calculation('+')}>
+            <TextSing>+</TextSing>
+          </Btn>
 
-      <TouchableOpacity style={styles.box} onPress={() => calculation('=')}>
-        <Text style={styles.textBox}>=</Text>
-      </TouchableOpacity>
+          <Btn onPress={() => calculation('-')}>
+            <TextSing>-</TextSing>
+          </Btn>
 
-      <TouchableOpacity style={styles.box} onPress={() => calculation('x')}>
-        <Text style={styles.textBox}>x</Text>
-      </TouchableOpacity>
+          <Btn onPress={() => calculation('x')}>
+            <TextSing>x</TextSing>
+          </Btn>
 
-      <TouchableOpacity style={styles.box} onPress={() => calculation('/')}>
-        <Text style={styles.textBox}>/</Text>
-      </TouchableOpacity>
-
-      {number.map((num) => {
-        return (
-          <TouchableOpacity
-            style={styles.box}
-            key={num.toString()}
-            onPress={() => calculation(num)}
-          >
-            <Text style={styles.textBox}>{num}</Text>
-          </TouchableOpacity>
-        );
-      })}
-    </View>
+          <Btn onPress={() => calculation('/')}>
+            <TextSing>/</TextSing>
+          </Btn>
+        </SingContainer>
+      </Container>
+    </AllBtn>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    flexWrap: 'wrap-reverse',
-    justifyContent: 'center',
-    marginTop: 50,
-  },
-  box: {
-    width: 85,
-    height: 85,
-    backgroundColor: '#7676',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 45,
-    margin: 10,
-  },
-  textBox: {
-    fontFamily: 'Regular',
-    fontSize: 40,
-    color: '#ddd',
-  },
-});

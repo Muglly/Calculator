@@ -1,9 +1,8 @@
-import React from 'react';
 import styled from 'styled-components/native';
 
 export const VisorStyle = styled.View`
   width: 100%;
-  height: 250px;
+  height: 47%;
   padding-right: 10px;
   background-color: #76767676;
   align-items: flex-end;
