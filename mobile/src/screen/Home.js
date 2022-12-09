@@ -11,9 +11,13 @@ export function Home() {
   const [sign, setSign] = useState('');
 
   const calculation = (operator) => {
-    if (sign == '') {
-      setFirstNumber(parseInt(firstNumber.toString() + operator.toString()));
-      setVisor(parseInt(firstNumber.toString() + operator.toString()));
+    if (sign === '') {
+      setFirstNumber(parseFloat(firstNumber.toString() + operator.toString()));
+      setVisor(parseFloat(firstNumber.toString() + operator.toString()));
+      if (operator === '.') {
+        setFirstNumber(firstNumber.toString() + operator.toString());
+        setVisor(parseFloat(firstNumber.toString() + operator.toString()));
+      }
     }
 
     if (
@@ -24,10 +28,16 @@ export function Home() {
       setSign(operator);
     }
 
-    if (sign != '') {
-      setSecondNumber(parseInt(secondNumber.toString() + operator.toString()));
-      const sNumber = parseInt(secondNumber.toString() + operator.toString());
+    if (sign !== '') {
+      setSecondNumber(parseFloat(secondNumber.toString() + operator.toString()));
+      const sNumber = parseFloat(secondNumber.toString() + operator.toString());
       setVisor(firstNumber + sign + sNumber);
+      if (operator === '.') {
+        setSecondNumber(secondNumber.toString() + operator.toString());
+        setVisor(
+          parseFloat(firstNumber + sign + parseFloat(secondNumber.toString() + operator.toString()))
+        );
+      }
     }
 
     if (operator == '=') {
