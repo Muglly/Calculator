@@ -1,11 +1,11 @@
 ﻿# <h1 align="center">Calculator</h1>
 
- Calculadora desenvolvida com ReactJs para Web e com React Native para mobile.
+Calculadora desenvolvida com ReactJs para Web e com React Native para mobile.
 
 Dentro dessa aplicação é possível:
 
-- Realizar calculos operadores de Soma, Subtração, Divisão e Multiplicação.
-- Calculos com Decimais.
+- Realizar cálculos operadores de Soma, Subtração, Divisão e Multiplicação.
+- Cálculos com Decimais.
 - Apagar valor na tela
 
 
