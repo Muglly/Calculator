@@ -11,7 +11,7 @@ Dentro dessa aplicação é possível:
 
 <h2 style="font-weight:bold" align="center"> FRONT-END (WEB) </h2>
 
-Aplicação frontend do projeto construído utilizando React.
+Projeto front-end construído utilizando React.
 
 <div style="display: inline_block"><br>
   <img align="center" alt="Rafa-react" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
@@ -46,7 +46,7 @@ A página abrirá no endereço:
 
 <h2 style="font-weight:bold" align="center">MOBILE</h2>
 
-Aplicação mobile do projeto construído utilizando React Native, Expo, Styled Componets.
+Aplicação mobile utilizando React Native, Expo, Styled Componets.
 
 <div style="display: inline_block"><br>
   <img align="center" alt="Rafa-react" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
